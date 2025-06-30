@@ -1,0 +1,538 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* Contenedor general del dashboard - Estilo futurista */
+#dashboard {
+  padding: 40px 20px;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  background-color: #0a0e17;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(46, 49, 146, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(191, 38, 111, 0.15) 0%, transparent 20%);
+  color: #e0e0e0;
+  border: 1px solid rgba(90, 200, 250, 0.2);
+  box-shadow: 0 0 30px rgba(0, 150, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Efecto de borde futurista */
+#dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  animation: scanline 8s linear infinite;
+}
+
+/* Título del dashboard futurista */
+#dashboard h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+  position: relative;
+}
+
+#dashboard h2::after {
+  content: '';
+  display: block;
+  width: 300px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  margin: 15px auto 0;
+}
+
+/* Tarjetas KPI futuristas */
+.kpi-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.kpi-card {
+  background: rgba(20, 25, 45, 0.7);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  border-radius: 12px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(0, 200, 255, 0.8), 
+    rgba(191, 38, 111, 0.8));
+}
+
+.kpi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(0, 200, 255, 0.3);
+  border-color: rgba(0, 200, 255, 0.4);
+}
+
+.kpi-card h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #a0aec0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.kpi-card p {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3b82f6;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Filtros futuristas */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.filters label {
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  font-size: 14px;
+  background-color: rgba(20, 25, 45, 0.7);
+  color: #fff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+/* Botones futuristas */
+.filters button {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: linear-gradient(135deg, 
+    rgba(0, 200, 255, 0.8) 0%, 
+    rgba(0, 150, 255, 0.9) 100%);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+  margin-top: 10px;
+}
+
+.filters button:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 180, 240, 0.9) 0%, 
+    rgba(0, 120, 215, 1) 100%);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+}
+
+.filters button:active {
+  transform: scale(0.98);
+}
+
+.filters button:disabled {
+  background: #4a5568;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.filters button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+/* Títulos de sección futuristas */
+#dashboard h3 {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+#dashboard h3::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  margin: 10px auto 0;
+}
+
+/* Gráficos futuristas */
+.chart-container {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 60px;
+  background: rgba(20, 25, 45, 0.7);
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+/* Selector de tipo de gráfico futurista */
+.chart-type-selector {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.chart-type-selector label {
+  margin-right: 10px;
+  color: #a0aec0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.chart-type-selector select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  background-color: rgba(20, 25, 45, 0.7);
+  font-size: 14px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.chart-type-selector select:focus {
+  outline: none;
+  border-color: rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+/* Tooltip personalizado futurista */
+.custom-tooltip {
+  background: rgba(20, 25, 45, 0.95);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.custom-tooltip .label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #3b82f6;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.custom-tooltip p {
+  margin: 5px 0;
+  color: #e0e0e0;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Placeholder para datos vacíos */
+.data-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 25, 45, 0.7);
+  border-radius: 14px;
+  color: #a0aec0;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+/* Esqueletos de carga futuristas */
+.chart-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(20, 25, 45, 0.7);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.skeleton-header {
+  height: 20px;
+  width: 60%;
+  background: linear-gradient(90deg, 
+    rgba(30, 35, 65, 0.8), 
+    rgba(50, 55, 85, 0.8),
+    rgba(30, 35, 65, 0.8));
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-size: 200% 100%;
+  animation: skeletonShine 1.5s infinite linear;
+}
+
+.skeleton-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.skeleton-bar {
+  height: 20px;
+  background: linear-gradient(90deg, 
+    rgba(30, 35, 65, 0.8), 
+    rgba(50, 55, 85, 0.8),
+    rgba(30, 35, 65, 0.8));
+  border-radius: 4px;
+  background-size: 200% 100%;
+  animation: skeletonShine 1.5s infinite linear;
+}
+
+/* Mensaje de error futurista */
+.error-message {
+  background: rgba(75, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid rgba(255, 50, 50, 0.8);
+  margin-bottom: 20px;
+  color: #ff6b6b;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+}
+
+.error-message button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  background: rgba(255, 50, 50, 0.8);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: rgba(255, 30, 30, 0.9);
+  transform: scale(1.05);
+}
+
+/* Tabs futuristas */
+.dashboard-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+  flex-wrap: wrap;
+}
+
+.dashboard-tabs button {
+  padding: 12px 24px;
+  margin: 0 5px 10px;
+  background: rgba(20, 25, 45, 0.7);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  border-bottom: none;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-tabs button.active {
+  background: linear-gradient(135deg, 
+    rgba(0, 200, 255, 0.2) 0%, 
+    rgba(0, 150, 255, 0.3) 100%);
+  color: white;
+  border-color: rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+.dashboard-tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    rgba(0, 200, 255, 0.8), 
+    rgba(191, 38, 111, 0.8));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-tabs button.active::after {
+  transform: scaleX(1);
+}
+
+/* Animaciones */
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+@keyframes skeletonShine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #dashboard {
+    padding: 30px 15px;
+  }
+  
+  #dashboard h2 {
+    font-size: 32px;
+  }
+  
+  #dashboard h3 {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+  
+  .kpi-card {
+    width: 100%;
+    max-width: 280px;
+    padding: 20px;
+  }
+  
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .filter-group {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .chart-container {
+    height: 350px;
+    padding: 15px;
+  }
+  
+  .dashboard-tabs button {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #dashboard h2 {
+    font-size: 28px;
+  }
+  
+  #dashboard h3 {
+    font-size: 20px;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+  
+  .kpi-card p {
+    font-size: 20px;
+  }
+}

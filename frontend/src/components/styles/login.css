@@ -1,0 +1,248 @@
+/* Contenedor principal del login - Estilo futurista */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: rgba(20, 25, 45, 0.8);
+  border-radius: 16px;
+  box-shadow: 
+    0 0 30px rgba(0, 150, 255, 0.2),
+    0 0 15px rgba(191, 38, 111, 0.2);
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  color: #e0e0e0;
+  text-align: center;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de borde luminoso */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    rgba(191, 38, 111, 0.8),
+    transparent);
+  animation: scanline 6s linear infinite;
+}
+
+/* Título futurista */
+.login-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+  position: relative;
+}
+
+.login-container h2::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  margin: 15px auto 0;
+}
+
+/* Formularios */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Inputs futuristas */
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container input,
+.login-container select {
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #fff;
+  background-color: rgba(10, 15, 30, 0.6);
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus,
+.login-container input:focus,
+.login-container select:focus {
+  outline: none;
+  border-color: rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+  background-color: rgba(20, 30, 50, 0.8);
+}
+
+/* Placeholder estilizado */
+.login-container input::placeholder {
+  color: rgba(200, 200, 200, 0.6);
+  letter-spacing: 0.5px;
+}
+
+/* Botones futuristas */
+.login-container button[type="submit"],
+.login-container button {
+  background: linear-gradient(135deg, 
+    rgba(0, 200, 255, 0.8) 0%, 
+    rgba(0, 150, 255, 0.9) 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+  margin-top: 10px;
+}
+
+.login-container button[type="submit"]:hover,
+.login-container button:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 180, 240, 0.9) 0%, 
+    rgba(0, 120, 215, 1) 100%);
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+}
+
+.login-container button[type="submit"]:active,
+.login-container button:active {
+  transform: scale(0.98);
+}
+
+/* Efecto shine en botones */
+.login-container button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+/* Mensajes */
+.error-message,
+.login-container p.error-message {
+  color: #ff4d6d;
+  font-weight: 600;
+  margin-top: 16px;
+  text-shadow: 0 0 8px rgba(255, 77, 109, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.success-message {
+  color: #2ecc71;
+  font-weight: 600;
+  margin-top: 16px;
+  text-shadow: 0 0 8px rgba(46, 204, 113, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* Texto de registro futurista */
+.login-container p.register-text {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #a0aec0;
+  letter-spacing: 0.5px;
+}
+
+.login-container p.register-text a {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  position: relative;
+}
+
+.login-container p.register-text a:hover {
+  color: #00c8ff;
+  text-decoration: none;
+}
+
+.login-container p.register-text a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  transition: all 0.3s ease;
+}
+
+.login-container p.register-text a:hover::after {
+  background: linear-gradient(90deg, 
+    rgba(0, 200, 255, 0.8), 
+    rgba(191, 38, 111, 0.8));
+}
+
+/* Animaciones */
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+
+  .login-container h2 {
+    font-size: 26px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"],
+  .login-container input,
+  .login-container select {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  .login-container button[type="submit"],
+  .login-container button {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+}

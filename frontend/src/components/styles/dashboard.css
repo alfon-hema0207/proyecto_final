@@ -1,0 +1,170 @@
+/* Contenedor general del Dashboard - Estilo futurista */
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  background-color: #0a0e17;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(46, 49, 146, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(191, 38, 111, 0.15) 0%, transparent 20%);
+  color: #e0e0e0;
+  border: 1px solid rgba(90, 200, 250, 0.2);
+  box-shadow: 0 0 30px rgba(0, 150, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de borde futurista */
+.dashboard-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Contenedor del encabezado */
+.dashboard-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+/* Título principal futurista (modificado) */
+.dashboard-container h1 {
+  font-size: 42px;
+  color: #fff;
+  margin: 0 auto 20px auto;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+  position: relative;
+  display: block;
+  width: fit-content;
+}
+
+.dashboard-container h1::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 200, 255, 0.8), 
+    transparent);
+  margin: 10px auto 0;
+}
+
+/* Botón de cerrar sesión futurista (modificado) */
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, 
+    rgba(225, 29, 72, 0.8) 0%, 
+    rgba(159, 18, 57, 0.9) 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 
+    0 0 15px rgba(225, 29, 72, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Rajdhani', sans-serif;
+  z-index: 10;
+}
+
+.logout-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, 
+    rgba(190, 18, 60, 0.9) 0%, 
+    rgba(136, 19, 55, 1) 100%);
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 25px rgba(225, 29, 72, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.logout-button:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 0 10px rgba(225, 29, 72, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto de partículas futuristas (opcional) */
+.dashboard-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 200, 255, 0.1) 0%, transparent 2%),
+    radial-gradient(circle at 80% 70%, rgba(225, 29, 72, 0.1) 0%, transparent 2%),
+    radial-gradient(circle at 40% 60%, rgba(0, 200, 255, 0.1) 0%, transparent 2%),
+    radial-gradient(circle at 60% 40%, rgba(225, 29, 72, 0.1) 0%, transparent 2%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding-top: 60px; /* Más espacio para el botón */
+  }
+  
+  .logout-button {
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+  
+  .dashboard-container h1 {
+    font-size: 32px;
+    margin-top: 10px;
+  }
+}
